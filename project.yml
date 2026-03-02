@@ -1,0 +1,35 @@
+name: TaskBoard
+options:
+  bundleIdPrefix: com.zhanibekmaratov
+  deploymentTarget:
+    iOS: "16.0"
+  xcodeVersion: "15.0"
+
+targets:
+  TaskBoard:
+    type: application
+    platform: iOS
+    sources:
+      - TaskBoard
+    settings:
+      base:
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait"
+        SWIFT_VERSION: "5.9"
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.zhanibekmaratov.TaskBoard
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: 1
+
+  TaskBoardTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - TaskBoardTests
+    dependencies:
+      - target: TaskBoard
+    settings:
+      base:
+        SWIFT_VERSION: "5.9"
+        GENERATE_INFOPLIST_FILE: YES
